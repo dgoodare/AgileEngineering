@@ -5,8 +5,6 @@ define('INCLUDE_DIR', dirname(__FILE__) . '/inc/');
 $rules = array(
     //
     //API Routes
-    'apiShowDogs' => "/api/allDogs",
-    'apiShowSingleDogs' => "/api/singleDog/(?'dogID'[\w\-]+)",
 
 
 
@@ -39,3 +37,6 @@ foreach ($rules as $action => $rule) {
 include(INCLUDE_DIR . '404.php');
 
 ?>
+<div>
+    this works
+</div>

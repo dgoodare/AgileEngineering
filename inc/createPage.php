@@ -3,7 +3,7 @@
     <head>
         <script>
             //jQuery script for sending data to a php script to be added to the database
-            jQuery( document ).ready(function( $ ))
+            jQuery( document ).ready(function( $ )
             {
                 $('#create-button').click(function()
                     {
@@ -67,7 +67,7 @@
                         }
                     }
                 );
-            }
+            });
         </script>
     </head>
 

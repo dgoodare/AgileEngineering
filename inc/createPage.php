@@ -1,29 +1,8 @@
 <!DOCTYPE html>
     <!-- *****Right now there is no styling whatsoever, but this should be easily fixed once we have the look for the rest of the website finalised*****-->
     <head>
-        
-    </head>
-
-    <body>
-            <h2>Please enter the information for a new event</h2>
-            <div id="create">
-                <form id="create-form" method="POST">
-                    <p>Title:</p> <input id="create-title" type="text" name="create-title">
-                    <p>Latitude:</p> <input id="create-latitude" type="text" name="create-latitude">
-                    <p>Longitude:</p> <input id="create-longitude" type="text" name="create-longitude">
-                    <p>Description:</p> <input id="create-description" type="text" name="create-description">
-                    <p>Phone Number:</p> <input id="create-number" type="text" name="create-number">
-                    <p>Email:</p> <input id="create-email" type="text" name="create-email">
-                    <p>Associated Goal (between 1-17):</p> <input id="create-goal" type="number" min="1" max="17" name="create-Longitude">
-                    <button id="create-button" type="button">Submit</button>
-                </form>
-            </div>
-
-            <div id="server-response">
-                <!-- response from server will be shown here -->
-            </div>
-
-            <script>
+        <script type="text/javascript" src="https://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.min.js"></script>
+        <script type="text/javascript">
             //jQuery script for sending data to a php script to be added to the database
             $(document).ready(function()
             {
@@ -90,6 +69,26 @@
                     }
                 );
             });
-        </script>
+        </script> 
+    </head>
+
+    <body>
+            <h2>Please enter the information for a new event</h2>
+            <div id="create">
+                <form id="create-form" method="POST">
+                    <p>Title:</p> <input id="create-title" type="text" name="create-title">
+                    <p>Latitude:</p> <input id="create-latitude" type="text" name="create-latitude">
+                    <p>Longitude:</p> <input id="create-longitude" type="text" name="create-longitude">
+                    <p>Description:</p> <input id="create-description" type="text" name="create-description">
+                    <p>Phone Number:</p> <input id="create-number" type="text" name="create-number">
+                    <p>Email:</p> <input id="create-email" type="text" name="create-email">
+                    <p>Associated Goal (between 1-17):</p> <input id="create-goal" type="number" min="1" max="17" name="create-Longitude">
+                    <button id="create-button" type="button">Submit</button>
+                </form>
+            </div>
+
+            <div id="server-response">
+                <!-- response from server will be shown here -->
+            </div>
     </body>
 </html>

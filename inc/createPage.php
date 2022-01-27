@@ -23,7 +23,7 @@
                             //create JSON to be sent using AJAX
                             $.ajax(
                                 {
-                                    url: "addPageQuery.php",
+                                    url: "/api/addPage",
                                     type: "POST",
                                     data: {
                                         Title: title,

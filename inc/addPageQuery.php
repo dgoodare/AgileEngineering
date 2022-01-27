@@ -1,6 +1,6 @@
 <?php
     //Connection script
-    inlcude("dbconnect.php");
+    include("dbconnect.php");
 
     //Form Data from AJAX
     $Title = $_POST['Title'];
@@ -21,18 +21,18 @@
     $Goal = (int)$Goal;
 
     //SQL insert query ** couldn't get access to database when writing this, so variable names might be wrong **
-    $query = "INSERT INTO Events (title, latitude, longitude, description, phonenumber, email, goal)
-              VALUES (:title, :latitude, :longitude, :desription, :phonenumber, :email, :goal)"
+    $query = "INSERT INTO Events (Title, Latitude, Longitude, Description, `Phone Number`, Email, Goal)
+              VALUES (:title, :latitude, :longitude, :desription, :phonenumber, :email, :goal)";
 
     //prepate statement and bind parameters
-    $stmt = $db->prepare($query);
-    $stmt->bindParam('title', $Title);
-    $stmt->bindParam('latitude', $Latitude);
-    $stmt->bindParam('longitude', $Longitude);
-    $stmt->bindParam('description', $Description);
-    $stmt->bindParam('phonenumber', $Number);
-    $stmt->bindParam('email', $Email);
-    $stmt->bindParam('goal', $Goal);
+    $stmt = mysqli_prepare($db, $query);
+    $stmt->bind_Param('title', $Title);
+    $stmt->bind_Param('latitude', $Latitude);
+    $stmt->bind_Param('longitude', $Longitude);
+    $stmt->bind_Param('description', $Description);
+    $stmt->bind_Param('phonenumber', $Number);
+    $stmt->bind_Param('email', $Email);
+    $stmt->bind_Param('goal', $Goal);
 
     //execute query
     $stmt->execute();

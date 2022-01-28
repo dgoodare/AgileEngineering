@@ -23,22 +23,16 @@
     
     //SQL insert query ** couldn't get access to database when writing this, so variable names might be wrong **
     $query = "INSERT INTO Events (Title, Latitude, Longitude, Description, `Phone Number`, Email, Goal)
-              VALUES (:title, :latitude, :longitude, :desription, :phonenumber, :email, :goal)";
+              VALUES (?, ?, ?, ?, ?, ?, ?)";
     
     //prepate statement and bind parameters
     $stmt = mysqli_prepare($db, $query);
     
-    $stmt->bind_Param('title', $Title);
-    $stmt->bind_Param('latitude', $Latitude);
-    $stmt->bind_Param('longitude', $Longitude);
-    $stmt->bind_Param('description', $Description);
-    $stmt->bind_Param('phonenumber', $Number);
-    $stmt->bind_Param('email', $Email);
-    $stmt->bind_Param('goal', $Goal);
+    mysqli_stmt_bind_param($stmt, 'sddsssi', $Title, $Latitude, $Longitude, $Description, $Number, $Email, $Goal);
 
     //execute query
-    $stmt->execute();
-    /*
+    mysqli_stmt_execute($stmt);
+    
     //return success/failure code
     if($stmt)
     {
@@ -50,7 +44,7 @@
         //failure
         echo json_encode(array("statusCode"=>201));
     }
-    */
+    
 ?>
 
 <div>

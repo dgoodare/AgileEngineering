@@ -23,7 +23,7 @@
                             //create JSON to be sent using AJAX
                             $.ajax(
                                 {
-                                    url: "/api/addPage",
+                                    url: "https://ac31007.azurewebsites.net/api/addPage",
                                     type: "POST",
                                     data: {
                                         Title: title,

@@ -1,0 +1,133 @@
+
+
+
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+
+
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+
+
+
+
+
+
+
+
+a:link {
+  color: #c6025c;
+  background-color: transparent;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:visited {
+  color: #f9c513;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #93c718;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: #f9c513;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+
+
+
+
+
+/*---global settings for all pages----*/
+
+/*Header and paragraph formatting*/
+h1{
+	text-align: center;
+	letter-spacing: 5px;
+}
+h2{
+	margin-top: 10px;
+	margin-bottom: 20px;
+	letter-spacing: 5px;
+	text-align: center;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+}
+
+p{
+	text-align: justify;
+	letter-spacing: 1px;
+    font-family: 'Nunito', sans-serif;
+}
+
+/*Keepts footer at bottom*/
+html, body{
+	position: relative;
+	height: 100%;
+	background-color: #049a9b;
+	font-family: 'Nunito', sans-serif;
+}
+
+/*Keeps the footer at the bottom
+ - inclue <div class="pageheight"> between body and header
+ - </div> before script and footer*/
+.pageheight{
+	min-height: 100%;
+}
+
+/*footer*/
+footer{
+	margin-top: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background-color: #93C718;
+	bottom: 0;
+	position: relative;
+}
+

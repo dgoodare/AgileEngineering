@@ -24,9 +24,10 @@
     //SQL insert query ** couldn't get access to database when writing this, so variable names might be wrong **
     $query = "INSERT INTO Events (Title, Latitude, Longitude, Description, `Phone Number`, Email, Goal)
               VALUES (:title, :latitude, :longitude, :desription, :phonenumber, :email, :goal)";
-    /*
+    
     //prepate statement and bind parameters
     $stmt = mysqli_prepare($db, $query);
+    /*
     $stmt->bind_Param('title', $Title);
     $stmt->bind_Param('latitude', $Latitude);
     $stmt->bind_Param('longitude', $Longitude);

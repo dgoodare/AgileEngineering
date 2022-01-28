@@ -32,17 +32,4 @@ if (!$db) {
     echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
     exit;
 }
-
-
-//$db = new mysqli(
-//    "localhost",
-//    "frankenlitics",
-//    "S0b7Yw1kcVkPooyz",
-//    "frankenlitics"
-//);
-
-// test if connection was established, and print any errors
-
-//if (!$db) {
-//    die('Connect Error: ' . mysqli_connect_errno());
-//}
+?>

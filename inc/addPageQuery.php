@@ -27,7 +27,7 @@
     
     //prepate statement and bind parameters
     $stmt = mysqli_prepare($db, $query);
-    /*
+    
     $stmt->bind_Param('title', $Title);
     $stmt->bind_Param('latitude', $Latitude);
     $stmt->bind_Param('longitude', $Longitude);
@@ -38,7 +38,7 @@
 
     //execute query
     $stmt->execute();
-
+    /*
     //return success/failure code
     if($stmt)
     {

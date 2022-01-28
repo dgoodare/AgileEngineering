@@ -56,6 +56,9 @@
                                             //send unknown error message
                                             $('#server-response').html('An unknown error occurred');
                                         }
+                                    },
+                                    error: function() {
+                                       alert('There was an error performing the AJAX call');
                                     }
 
                                 }

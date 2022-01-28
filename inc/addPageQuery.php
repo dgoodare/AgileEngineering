@@ -3,13 +3,13 @@
     include("dbconnect.php");
 
     //Form Data from AJAX
-    $Title = $_POST['Title'];
-    $Latitude = $_POST['Latitude'];
-    $Longitude = $_POST['Longitude'];
-    $Description = $_POST['Description'];
-    $Number = $_POST['Number'];
-    $Email = $_POST['Email'];
-    $Goal = $_POST['Goal'];
+    $Title = "Test title";//$_POST['Title'];
+    $Latitude = "123";//$_POST['Latitude'];
+    $Longitude = "456";//$_POST['Longitude'];
+    $Description = "Test description";//;$_POST['Description'];
+    $Number = "1234567890";//$_POST['Number'];
+    $Email = "test@test.com";//$_POST['Email'];
+    $Goal = "1";//$_POST['Goal'];
 
     //convert to correct data types
     $Title = strval($Title);

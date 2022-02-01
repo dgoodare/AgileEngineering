@@ -5,23 +5,58 @@
     //Form Data from AJAX
     $ID = $_POST['ID'];
     $Title = $_POST['Title'];
-    $Latitude = $_POST['Latitude'];
-    $Longitude = $_POST['Longitude'];
     $Description = $_POST['Description'];
+    $StreetAddress = $_POST['StreetAddress'];
+    $City = $_POST['City'];
+    $Postcode = $_POST['Postcode'];
     $Number = $_POST['Number'];
     $Email = $_POST['Email'];
-    $Goal = $_POST['Goal'];
+    $Goals = $_POST['Goals'];
+    $Latitude = $_POST['Latitude'];
+    $Longitude = $_POST['Longitude'];
 
     //convert to correct data types
     $ID = (int)$ID;
     $Title = strval($Title);
-    $Latitude = (float)$Latitude;
-    $Longitude = (float)$Longitude;
     $Description = strval($Description);
+    $StreetAddress = strval($StreetAddress);
+    $City = strval($City);
+    $Postcode = strval($Postcode);
     $Number = strval($Number);
     $Email = strval($Email);
-    $Goal = (int)$Goal;
+    $Latitude = (float)$Latitude;
+    $Longitude = (float)$Longitude;
 
-    $query = "UPDATE Events SET ......
-              WHERE ID = ....."
+    for ($i=0; $i < 17; $i++)
+    {
+        $Goals[$i] = (int)$Goals[$i];
+    }
+
+
+    //SQL Query
+    $query = "UPDATE Events SET Title = ?, Description = ?, StreetAddress = ?, City = ?, Postcode = ?, PhoneNumber = ?, Email = ?, Latitude = ?, Longitude = ?,
+                noPoverty = ?, zeroHunger = ?, goodHealth = ?, qualityEducation = ?, genderEquality = ?, cleanWater = ?, affordableEnergy = ?, economicGrowth = ?, 
+                industryAndInfrastructure = ?, reducedInequalities = ?, sustainableCommunities = ?, responsibleProduction = ?, climateAction = ?, waterLife = ?, 
+                landLife = ?, peaceJustice = ?, partnershipGoals = ?
+              WHERE ID = ?";
+    
+    //create statement
+    $stmt = mysqli_prepare($db, $query);
+    //bind parameters to statement
+    mysqli_stmt_bind_param($stmt, "sssssssddddddddddddddddddd", $Title, $Description, $StreetAddress, $City, $Postcode, $Number, $Email, $Latitude, $Longitude, $Goals[0], $Goals[1], $Goals[2], $Goals[3], $Goals[4], $Goals[5], $Goals[6], $Goals[7], $Goals[8], $Goals[9], $Goals[10], $Goals[11], $Goals[12], $Goals[13], $Goals[14], $Goals[15], $Goals[16], $ID);
+    
+    //execute query
+    mysqli_stmt_execute($stmt);
+    
+    //return success/failure code
+    if($stmt)
+    {
+        //success
+        echo json_encode(array("statusCode"=>200));
+    }
+    else
+    {
+        //failure
+        echo json_encode(array("statusCode"=>201));
+    }
 ?>

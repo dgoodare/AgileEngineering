@@ -10,15 +10,29 @@
                         //retrieve values from form based on ID of input
                         var search = $('#search-input').val();
                         var title = $('#update-title').val();
-                        var latitude = $('#update-latitude').val();
-                        var longitude = $('#update-longitude').val();
                         var description = $('#update-description').val();
+                        var streetAddress = $('#update-address').val();
+                        var city = $('#update-city').val();
+                        var postcode = $('#update-postcode').val();
                         var number = $('#update-number').val();
                         var email = $('#update-email').val();
-                        var goal = $('#update-goal').val();
+                        var goals = [];
+
+                        //get boolean values from checkbox fields
+                        $('#editForm input[type=checkbox]').each(function()
+                        {
+                            if(this.checked)
+                            {
+                                goals.push(1);
+                            }
+                            else
+                            {
+                                goals.push(0);
+                            }
+                        });
 
                         //check that all fields have data
-                        if (title != "" && latitude != "" && longitude != "" && description != "" && number != "" && email != "" && goal != "")
+                        if (title != "" && latitude != "" && longitude != "" && description != "" && number != "" && email != "" && goals.length != 0)
                         {
                             //create JSON to be sent using AJAX
                             $.ajax(
@@ -28,12 +42,13 @@
                                     data: {
                                         ID: search,
                                         Title: title,
-                                        Latitude: latitude,
-                                        Longitude: longitude,
                                         Description: description,
+                                        StreetAddress: streetAddress,
+                                        City: city, 
+                                        Postcode: postcode,
                                         Number: number,
                                         Email: email,
-                                        Goal: goal
+                                        Goals: goals
                                     },
 
                                     cache: false,
@@ -124,12 +139,49 @@
             <form id="editForm" method="POST" style="display: none;">
             <!-- These fields will need to be updated to match any changes made to the database -->
                 <p>Title:</p> <input id="update-title" type="text" name="update-title">
-                <p>Latitude:</p> <input id="update-latitude" type="text" name="update-latitude">
-                <p>Longitude:</p> <input id="update-longitude" type="text" name="update-longitude">
                 <p>Description:</p> <input id="update-description" type="text" name="update-description">
+                <p>Street Address:</p> <input id="update-address" type="text" name="update-address">
+                <p>City:</p> <input id="update-city" type="text" name="update-city">
+                <p>Post Code:</p> <input id="update-postcode" type="text" name="update-postcode">
                 <p>Phone Number:</p> <input id="update-number" type="text" name="update-number">
                 <p>Email:</p> <input id="update-email" type="text" name="update-email">
-                <p>Associated Goal (between 1-17):</p> <input id="update-goal" type="number" min="1" max="17" name="update-Longitude">
+                <p>Associated Goals:</p>
+                <div>
+                    <input type="checkbox" id="noPoverty" value="noPoverty">
+                    <label for="noPoverty">No Poverty</label>
+                    <input type="checkbox" id="zeroHunger" value="zeroHunger">
+                    <label for="zeroHunger">Zero Hunger</label>
+                    <input type="checkbox" id="goodHealth" value="goodHealth">
+                    <label for="goodHealth">Good Health and Well-Being</label>
+                    <input type="checkbox" id="qualityEducation" value="qualityEducation">
+                    <label for="qualityEducation">Quality Education</label>
+                    <input type="checkbox" id="genderEquality" value="genderEquality">
+                    <label for="genderEquality">Gender Equality</label>
+                    <input type="checkbox" id="cleanWater" value="cleanWater">
+                    <label for="cleanWater">Clean Water</label>
+                    <input type="checkbox" id="affordableEnergy" value="affordableEnergy">
+                    <label for="affordableEnergy">Affordable and Clean Energy</label>
+                    <input type="checkbox" id="economicGrowth" value="economicGrowth">
+                    <label for="economicGrowth">Decent Work and Economic Growth</label>
+                    <input type="checkbox" id="industryAndInfrastructure" value="industryAndInfrastructure">
+                    <label for="industryAndInfrastructure">Industry, Innovation and Infrastructure</label>
+                    <input type="checkbox" id="reducedInequalities" value="reducedInequalities">
+                    <label for="reducedInequalities">Reduced Inequalities</label>
+                    <input type="checkbox" id="sustainableCommunities" value="sustainableCommunities">
+                    <label for="sustainableCommunities">Sustainable Cities and Communities</label>
+                    <input type="checkbox" id="responsibleProduction" value="responsibleProduction">
+                    <label for="responsibleProduction">Responsible Consumption and Production</label>
+                    <input type="checkbox" id="climateAction" value="climateAction">
+                    <label for="climateAction">Climate Action</label>
+                    <input type="checkbox" id="waterLife" value="waterLife">
+                    <label for="waterLife">Life Below Water</label>
+                    <input type="checkbox" id="landLife" value="landLife">
+                    <label for="landLife">Life on Land</label>
+                    <input type="checkbox" id="peaceJustice" value="peaceJustice">
+                    <label for="peaceJustice">Peace, Justice and Strong Institutions</label>
+                    <input type="checkbox" id="partnershipGoals" value="partnershipGoals">
+                    <label for="partnershipGoals">Partnership for The Goals</label>
+                </div>
                 <button id="update-button" type="button">Update</button>
             </form>
 

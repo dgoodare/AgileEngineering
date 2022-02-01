@@ -17,14 +17,15 @@
             height: 40vh;
             margin-left: auto;  
             margin-right: auto;
-            display: none;
+            /*display: none;*/
         }
+        
     </style>
 </head>
 <body>
 
     <script>
-        function toggle_visibility(id) {
+        /*function toggle_visibility(id) {
             for (let i = 1; i < 4; i++) {
                 var x = "map"+i;
                 var y = document.getElementById(x);
@@ -36,317 +37,209 @@
                 e.style.display = 'none';
             else
                 e.style.display = 'block';
-        }
+        }*/
     </script>
 
-    <a onclick="toggle_visibility('map1');" href="#">Map1</a>
-    <a onclick="toggle_visibility('map2');" href="#">Map2</a>
-    <a onclick="toggle_visibility('map3');" href="#">Map3</a>
+    <button onclick="displayGoal1()">Goal 1</button>
+    <button onclick="displayGoal2()">Goal 2</button>
+    <button onclick="displayGoal3()">Goal 3</button>
+    <button onclick="displayGoal4()">Goal 4</button>
+    <button onclick="displayGoal5()">Goal 5</button>
 
     <div class="map" id='map1'>
     <script>
-        mapboxgl.accessToken = 'pk.eyJ1Ijoiam9obmhhcnJvdzE1IiwiYSI6ImNrMnhqY2NleTBjYzgzZ3RhZXVrZ2toYnIifQ.Bd6-bNYAwA9_T_AR9c2bDA';
-        var map = new mapboxgl.Map({
-            container: 'map1',
-            style: 'mapbox://styles/mapbox/streets-v11', //Options : satellite-v9, light-v10, dark-v10, streets-v11, outdoors-v11
-            center: [-2.970721, 56.462018],
-            zoom: 12
-        });
-        map.addControl(new mapboxgl.NavigationControl());
+        var x1;
+        var y1;
+        var description1;
 
-        map.on('load', () => {
-            map.addSource('places', {
-                //This is where we are going to have to figure out how to take items from the database and put their values into the description and co-ordinates
-                'type': 'geojson',
-                'data': {
-                    'type': 'FeatureCollection',
-                    'features': [
-                        {
-                                'type': 'Feature',
-                                'properties': {
-                                    'description':
-                                    '<strong>Test</strong><p>Enter content here</p>',
-                                'icon': 'park-15',
-                            },
-                            'geometry': {
-                                'type': 'Point',
-                                'coordinates': [-2.970721, 56.462018]
-                            }
-                        },
-                        {
-                                'type': 'Feature',
-                                'properties': {
-                                    'description':
-                                    '<strong>Test</strong><p>Enter content here</p>',
-                                'icon': 'car-15'
-                            },
-                            'geometry': {
-                                'type': 'Point',
-                                'coordinates': [-2.970721, 56.464118]
-                            }
-                        },
-                        {
-                                'type': 'Feature',
-                                'properties': {
-                                    'description':
-                                    '<strong>Test</strong><p>Enter content here</p>',
-                                'icon': 'park-15'
-                            },
-                            'geometry': {
-                                'type': 'Point',
-                                'coordinates': [-2.980721, 56.462018]
-                            }
-                        }
-                    ]
-                }
+        var x2;
+        var y2;
+        var description2;
+
+        var x3;
+        var y3;
+        var description3;
+
+        function displayGoal1(){
+            x1 = -2.970721;
+            y1 = 56.462018;
+            description1 = "<strong>Implement Dundee's Fairness Strategy and Action Plan.</strong>";
+
+            y2 = 56.463018;
+            x2 = -2.971721;
+            description2 = "<strong>Test a new model of advice on welfare benefits and budgeting to decrease the number of people affected by debt.</strong>";
+
+            x3 = -2.972721;
+            y3 = 56.464018;
+            description3 = "<strong>Increase the number of Dundee organisations and businesses signed up to the Scottish Living Wage and seek to have Dundee accredited as a 'Living Wage City'.</strong>";
+
+            displayMap();
+        }
+
+        function displayGoal2(){
+            x1 = -2.970721;
+            y1 = 56.462018;
+            description1 = "<strong>Support the delivery of a 'Fun and Food' programme giving families access to free meals and activities during school holidays.</strong>";
+
+            x2 = -2.971721;
+            y2 = 56.463018;
+            description2 = "<strong>Streamline procedures for applying for Free School Meals to maximise take-up.</strong>";
+
+            x3 = -2.972721;
+            y3 = 56.464018;
+            description3 = "<strong>Work with Greenspace Scotland to develop a Local Food Growing Strategy and expand the number of community growing projects and support them with skills training, materials and capacity building.</strong>";
+            displayMap();
+        }
+
+        function displayGoal3(){
+            x1 = -2.970721;
+            y1 = 56.462018;
+            description1 = "<strong>Reduce teenage pregnancy and implement a strategy on Pregnancy and Parenthood in Young People.</strong>";
+
+            x2 = -2.971721;
+            y2 = 56.463018;
+            description2 = "<strong>Improve identification and responses to children at risk of harm from parental substance misuse.</strong>";
+
+            x3 = -2.972721;
+            y3 = 56.464018;
+            description3 = "<strong>Work with NHS Tayside and Scottish Natural Heritage to develop a Green Health Partnership, linking health care and greenspace initiatives.</strong>";
+            displayMap();
+        }
+
+        function displayGoal4(){
+            x1 = -2.970721;
+            y1 = 56.462018;
+            description1 = "<strong>Deliver the Scottish Attainment Challenge and use Pupil Equity Funding to provide extra supped to pupils with identified needs.</strong>";
+
+            x2 = -2.971721;
+            y2 = 56.463018;
+            description2 = "<strong>Develop new and refurbished school buildings that support learning.</strong>";
+
+            x3 = -2.972721;
+            y3 = 56.464018;
+            description3 = "<strong>Develop an 'Aspire and Achieve' project that supports young people from the most deprived areas to access and sustain college paces.</strong>";
+            displayMap();
+        }
+
+        function displayGoal5(){
+            x1 = -2.970721;
+            y1 = 56.462018;
+            description1 = "<strong>Increase the % of employees in the top salary bonds who are female.</strong>";
+
+            x2 = -2.971721;
+            y2 = 56.463018;
+            description2 = "<strong>Work with partners on initiatives to prevent domestic abuse, target perpetrators and support victims.</strong>";
+
+            x3 = -2.972721;
+            y3 = 56.464018;
+            description3 = "<strong>Improve a range of services that coil, in practice, impact particularly on women eg expand provision of early years and childcare and improve support for carers. </strong>";
+            displayMap();
+        }
+
+
+
+        function displayMap(){
+            mapboxgl.accessToken = 'pk.eyJ1Ijoiam9obmhhcnJvdzE1IiwiYSI6ImNrMnhqY2NleTBjYzgzZ3RhZXVrZ2toYnIifQ.Bd6-bNYAwA9_T_AR9c2bDA';
+            var map = new mapboxgl.Map({
+                container: 'map1',
+                style: 'mapbox://styles/mapbox/streets-v11', //Options : satellite-v9, light-v10, dark-v10, streets-v11, outdoors-v11
+                center: [-2.970721, 56.462018],
+                zoom: 12
             });
+            map.addControl(new mapboxgl.NavigationControl());
+
+            map.on('load', () => {
+                map.addSource('places', {
+                    //This is where we are going to have to figure out how to take items from the database and put their values into the description and co-ordinates
+                    'type': 'geojson',
+                    'data': {
+                        'type': 'FeatureCollection',
+                        'features': [
+                            {
+                                    'type': 'Feature',
+                                    'properties': {
+                                        'description':
+                                        description1,
+                                    'icon': 'park-15',
+                                },
+                                'geometry': {
+                                    'type': 'Point',
+                                    'coordinates': [x1, y1]
+                                }
+                            },
+                            {
+                                    'type': 'Feature',
+                                    'properties': {
+                                        'description':
+                                        description2,
+                                    'icon': 'car-15'
+                                },
+                                'geometry': {
+                                    'type': 'Point',
+                                    'coordinates': [x2, y2]
+                                }
+                            },
+                            {
+                                    'type': 'Feature',
+                                    'properties': {
+                                        'description':
+                                        description3,
+                                    'icon': 'park-15'
+                                },
+                                'geometry': {
+                                    'type': 'Point',
+                                    'coordinates': [x3, y3]
+                                }
+                            }
+                        ]
+                    }
+                });
 
 
-            // Add a layer showing the places.
-            map.addLayer({
-                'id': 'places',
-                'type': 'symbol',
-                'source': 'places',
-                'layout': {
-                    'icon-image': '{icon}',
-                    'icon-allow-overlap': true, 
-                    'icon-size': 1 //Can use this to change size of icon
-                }
-            });
-            
-            map.on('click', 'places', (e) => {
-                // Copy coordinates array.
-                const coordinates = e.features[0].geometry.coordinates.slice();
-                const description = e.features[0].properties.description;
+                // Add a layer showing the places.
+                map.addLayer({
+                    'id': 'places',
+                    'type': 'symbol',
+                    'source': 'places',
+                    'layout': {
+                        'icon-image': '{icon}',
+                        'icon-allow-overlap': true, 
+                        'icon-size': 1 //Can use this to change size of icon
+                    }
+                });
                 
-                // Ensure that if the map is zoomed out such that multiple
-                // copies of the feature are visible, the popup appears
-                // over the copy being pointed to.
-                while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-                    coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-                }
-            
-                new mapboxgl.Popup()
-                    .setLngLat(coordinates)
-                    .setHTML(description)
-                    .addTo(map);
+                map.on('click', 'places', (e) => {
+                    // Copy coordinates array.
+                    const coordinates = e.features[0].geometry.coordinates.slice();
+                    const description = e.features[0].properties.description;
+                    
+                    // Ensure that if the map is zoomed out such that multiple
+                    // copies of the feature are visible, the popup appears
+                    // over the copy being pointed to.
+                    while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                        coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+                    }
+                
+                    new mapboxgl.Popup()
+                        .setLngLat(coordinates)
+                        .setHTML(description)
+                        .addTo(map);
+                });
+                
+                // Change the cursor to a pointer when the mouse is over the places layer.
+                map.on('mouseenter', 'places', () => {
+                    map.getCanvas().style.cursor = 'pointer';
+                });
+                
+                // Change it back to a pointer when it leaves.
+                map.on('mouseleave', 'places', () => {
+                    map.getCanvas().style.cursor = '';
+                });
             });
-            
-            // Change the cursor to a pointer when the mouse is over the places layer.
-            map.on('mouseenter', 'places', () => {
-                map.getCanvas().style.cursor = 'pointer';
-            });
-            
-            // Change it back to a pointer when it leaves.
-            map.on('mouseleave', 'places', () => {
-                map.getCanvas().style.cursor = '';
-            });
-        }); 
+        } 
 </script>
 </div>
 
-<div class="map" id='map2'>
-    <script>
-        mapboxgl.accessToken = 'pk.eyJ1Ijoiam9obmhhcnJvdzE1IiwiYSI6ImNrMnhqY2NleTBjYzgzZ3RhZXVrZ2toYnIifQ.Bd6-bNYAwA9_T_AR9c2bDA';
-        var map = new mapboxgl.Map({
-            container: 'map2',
-            style: 'mapbox://styles/mapbox/dark-v10', //Options : satellite-v9, light-v10, dark-v10, streets-v11, outdoors-v11
-            center: [-2.970721, 56.462018],
-            zoom: 12
-        });
-        map.addControl(new mapboxgl.NavigationControl());
 
-        map.on('load', () => {
-            map.addSource('places', {
-                //This is where we are going to have to figure out how to take items from the database and put their values into the description and co-ordinates
-                'type': 'geojson',
-                'data': {
-                    'type': 'FeatureCollection',
-                    'features': [
-                        {
-                                'type': 'Feature',
-                                'properties': {
-                                    'description':
-                                    '<strong>Test</strong><p>Enter content here</p>',
-                                'icon': 'park-15',
-                            },
-                            'geometry': {
-                                'type': 'Point',
-                                'coordinates': [-2.970721, 56.482018]
-                            }
-                        },
-                        {
-                                'type': 'Feature',
-                                'properties': {
-                                    'description':
-                                    '<strong>Test</strong><p>Enter content here</p>',
-                                'icon': 'car-15'
-                            },
-                            'geometry': {
-                                'type': 'Point',
-                                'coordinates': [-2.980721, 56.454118]
-                            }
-                        },
-                        {
-                                'type': 'Feature',
-                                'properties': {
-                                    'description':
-                                    '<strong>Test</strong><p>Enter content here</p>',
-                                'icon': 'park-15'
-                            },
-                            'geometry': {
-                                'type': 'Point',
-                                'coordinates': [-2.990721, 56.442018]
-                            }
-                        }
-                    ]
-                }
-            });
-
-
-            // Add a layer showing the places.
-            map.addLayer({
-                'id': 'places',
-                'type': 'symbol',
-                'source': 'places',
-                'layout': {
-                    'icon-image': '{icon}',
-                    'icon-allow-overlap': true, 
-                    'icon-size': 1 //Can use this to change size of icon
-                }
-            });
-            
-            map.on('click', 'places', (e) => {
-                // Copy coordinates array.
-                const coordinates = e.features[0].geometry.coordinates.slice();
-                const description = e.features[0].properties.description;
-                
-                // Ensure that if the map is zoomed out such that multiple
-                // copies of the feature are visible, the popup appears
-                // over the copy being pointed to.
-                while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-                    coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-                }
-            
-                new mapboxgl.Popup()
-                    .setLngLat(coordinates)
-                    .setHTML(description)
-                    .addTo(map);
-            });
-            
-            // Change the cursor to a pointer when the mouse is over the places layer.
-            map.on('mouseenter', 'places', () => {
-                map.getCanvas().style.cursor = 'pointer';
-            });
-            
-            // Change it back to a pointer when it leaves.
-            map.on('mouseleave', 'places', () => {
-                map.getCanvas().style.cursor = '';
-            });
-        }); 
-</script>
-</div>
-
-<div class="map" id='map3'>
-    <script>
-        mapboxgl.accessToken = 'pk.eyJ1Ijoiam9obmhhcnJvdzE1IiwiYSI6ImNrMnhqY2NleTBjYzgzZ3RhZXVrZ2toYnIifQ.Bd6-bNYAwA9_T_AR9c2bDA';
-        var map = new mapboxgl.Map({
-            container: 'map3',
-            style: 'mapbox://styles/mapbox/light-v10', //Options : satellite-v9, light-v10, dark-v10, streets-v11, outdoors-v11
-            center: [-2.970721, 56.462018],
-            zoom: 12
-        });
-        map.addControl(new mapboxgl.NavigationControl());
-
-        map.on('load', () => {
-            map.addSource('places', {
-                //This is where we are going to have to figure out how to take items from the database and put their values into the description and co-ordinates
-                'type': 'geojson',
-                'data': {
-                    'type': 'FeatureCollection',
-                    'features': [
-                        {
-                                'type': 'Feature',
-                                'properties': {
-                                    'description':
-                                    '<strong>Test</strong><p>Enter content here</p>',
-                                'icon': 'park-15',
-                            },
-                            'geometry': {
-                                'type': 'Point',
-                                'coordinates': [-2.970721, 56.462018]
-                            }
-                        },
-                        {
-                                'type': 'Feature',
-                                'properties': {
-                                    'description':
-                                    '<strong>Test</strong><p>Enter content here</p>',
-                                'icon': 'car-15'
-                            },
-                            'geometry': {
-                                'type': 'Point',
-                                'coordinates': [-2.970721, 56.464118]
-                            }
-                        },
-                        {
-                                'type': 'Feature',
-                                'properties': {
-                                    'description':
-                                    '<strong>Test</strong><p>Enter content here</p>',
-                                'icon': 'park-15'
-                            },
-                            'geometry': {
-                                'type': 'Point',
-                                'coordinates': [-2.980721, 56.462018]
-                            }
-                        }
-                    ]
-                }
-            });
-
-
-            // Add a layer showing the places.
-            map.addLayer({
-                'id': 'places',
-                'type': 'symbol',
-                'source': 'places',
-                'layout': {
-                    'icon-image': '{icon}',
-                    'icon-allow-overlap': true, 
-                    'icon-size': 1 //Can use this to change size of icon
-                }
-            });
-            
-            map.on('click', 'places', (e) => {
-                // Copy coordinates array.
-                const coordinates = e.features[0].geometry.coordinates.slice();
-                const description = e.features[0].properties.description;
-                
-                // Ensure that if the map is zoomed out such that multiple
-                // copies of the feature are visible, the popup appears
-                // over the copy being pointed to.
-                while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-                    coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-                }
-            
-                new mapboxgl.Popup()
-                    .setLngLat(coordinates)
-                    .setHTML(description)
-                    .addTo(map);
-            });
-            
-            // Change the cursor to a pointer when the mouse is over the places layer.
-            map.on('mouseenter', 'places', () => {
-                map.getCanvas().style.cursor = 'pointer';
-            });
-            
-            // Change it back to a pointer when it leaves.
-            map.on('mouseleave', 'places', () => {
-                map.getCanvas().style.cursor = '';
-            });
-        }); 
-</script>
-</div>
 </body>
 </html>

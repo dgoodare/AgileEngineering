@@ -5,6 +5,8 @@
     $output = NULL;//variable that will store html to send back to browser
     //GET value of user input
     $search = $_GET['searchInput'];
+    //convert to correct datatype
+    $search = (int)$search;
 
     $query = "SELECT * FROM Activities WHERE ID = '$search'";//SQL query
 

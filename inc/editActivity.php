@@ -88,7 +88,17 @@
                     }
                 );
             });
-        </script> 
+        </script>
+        <style>
+            body{
+                font-family: 'Nunito', sans-serif;
+            }
+
+            .goalCheckboxes{
+                display: block;
+            }
+        </style>
+
     </head>
 
     <body>
@@ -108,7 +118,7 @@
                     //check that it isn't empty
                     if (searchTerm == "")
                     {
-                        document.getElementById("").innerHTML = "No results, please enter a valid activity ID";
+                        document.getElementById("searchResults").innerHTML = "No results, please enter an ID";
                         return;
                     }
                     else
@@ -126,7 +136,7 @@
                             }
                         };
                         //** The address on the next line of code is NOT CORRECT */
-                        xmlhttp.open("GET","?searchInput="+searchTerm,true);
+                        xmlhttp.open("GET","https://ac31007.azurewebsites.net/api/searchActivity?searchInput="+searchTerm, true);
                         xmlhttp.send();
                     }
                 }
@@ -139,7 +149,7 @@
             <form id="editForm" method="POST" style="display: none;">
             <!-- These fields will need to be updated to match any changes made to the database -->
                 <p>Title:</p> <input id="update-title" type="text" name="update-title">
-                <p>Description:</p> <input id="update-description" type="text" name="update-description">
+                <p>Description:</p> <textarea id="update-description" type="text" name="update-description" rows="5" cols="75"></textarea>
                 <p>Street Address:</p> <input id="update-address" type="text" name="update-address">
                 <p>City:</p> <input id="update-city" type="text" name="update-city">
                 <p>Post Code:</p> <input id="update-postcode" type="text" name="update-postcode">
@@ -147,40 +157,74 @@
                 <p>Email:</p> <input id="update-email" type="text" name="update-email">
                 <p>Associated Goals:</p>
                 <div>
-                    <input type="checkbox" id="noPoverty" value="noPoverty">
-                    <label for="noPoverty">No Poverty</label>
-                    <input type="checkbox" id="zeroHunger" value="zeroHunger">
-                    <label for="zeroHunger">Zero Hunger</label>
-                    <input type="checkbox" id="goodHealth" value="goodHealth">
-                    <label for="goodHealth">Good Health and Well-Being</label>
-                    <input type="checkbox" id="qualityEducation" value="qualityEducation">
-                    <label for="qualityEducation">Quality Education</label>
-                    <input type="checkbox" id="genderEquality" value="genderEquality">
-                    <label for="genderEquality">Gender Equality</label>
-                    <input type="checkbox" id="cleanWater" value="cleanWater">
-                    <label for="cleanWater">Clean Water</label>
-                    <input type="checkbox" id="affordableEnergy" value="affordableEnergy">
-                    <label for="affordableEnergy">Affordable and Clean Energy</label>
-                    <input type="checkbox" id="economicGrowth" value="economicGrowth">
-                    <label for="economicGrowth">Decent Work and Economic Growth</label>
-                    <input type="checkbox" id="industryAndInfrastructure" value="industryAndInfrastructure">
-                    <label for="industryAndInfrastructure">Industry, Innovation and Infrastructure</label>
-                    <input type="checkbox" id="reducedInequalities" value="reducedInequalities">
-                    <label for="reducedInequalities">Reduced Inequalities</label>
-                    <input type="checkbox" id="sustainableCommunities" value="sustainableCommunities">
-                    <label for="sustainableCommunities">Sustainable Cities and Communities</label>
-                    <input type="checkbox" id="responsibleProduction" value="responsibleProduction">
-                    <label for="responsibleProduction">Responsible Consumption and Production</label>
-                    <input type="checkbox" id="climateAction" value="climateAction">
-                    <label for="climateAction">Climate Action</label>
-                    <input type="checkbox" id="waterLife" value="waterLife">
-                    <label for="waterLife">Life Below Water</label>
-                    <input type="checkbox" id="landLife" value="landLife">
-                    <label for="landLife">Life on Land</label>
-                    <input type="checkbox" id="peaceJustice" value="peaceJustice">
-                    <label for="peaceJustice">Peace, Justice and Strong Institutions</label>
-                    <input type="checkbox" id="partnershipGoals" value="partnershipGoals">
-                    <label for="partnershipGoals">Partnership for The Goals</label>
+                    <div class="goalCheckboxes">
+                        <input type="checkbox" id="noPoverty" value="noPoverty">
+                        <label for="noPoverty">No Poverty</label>
+                    </div>
+                    <div class="goalCheckboxes">
+                        <input type="checkbox" id="zeroHunger" value="zeroHunger">
+                        <label for="zeroHunger">Zero Hunger</label>
+                    </div>
+                    <div class="goalCheckboxes">
+                        <input type="checkbox" id="goodHealth" value="goodHealth">
+                        <label for="goodHealth">Good Health and Well-Being</label>
+                    </div>
+                    <div class="goalCheckboxes">
+                        <input type="checkbox" id="qualityEducation" value="qualityEducation">
+                        <label for="qualityEducation">Quality Education</label>
+                    </div>
+                    <div class="goalCheckboxes">
+                        <input type="checkbox" id="genderEquality" value="genderEquality">
+                        <label for="genderEquality">Gender Equality</label>
+                    </div>
+                    <div class="goalCheckboxes">
+                        <input type="checkbox" id="cleanWater" value="cleanWater">
+                        <label for="cleanWater">Clean Water</label>
+                    </div>
+                    <div class="goalCheckboxes">
+                        <input type="checkbox" id="affordableEnergy" value="affordableEnergy">
+                        <label for="affordableEnergy">Affordable and Clean Energy</label>
+                    </div>
+                    <div class="goalCheckboxes">
+                        <input type="checkbox" id="economicGrowth" value="economicGrowth">
+                        <label for="economicGrowth">Decent Work and Economic Growth</label>
+                    </div>
+                    <div class="goalCheckboxes">
+                        <input type="checkbox" id="industryAndInfrastructure" value="industryAndInfrastructure">
+                        <label for="industryAndInfrastructure">Industry, Innovation and Infrastructure</label>
+                    </div>
+                    <div class="goalCheckboxes">
+                        <input type="checkbox" id="reducedInequalities" value="reducedInequalities">
+                        <label for="reducedInequalities">Reduced Inequalities</label>
+                    </div>
+                    <div class="goalCheckboxes">
+                        <input type="checkbox" id="sustainableCommunities" value="sustainableCommunities">
+                        <label for="sustainableCommunities">Sustainable Cities and Communities</label>
+                    </div>
+                    <div class="goalCheckboxes">
+                        <input type="checkbox" id="responsibleProduction" value="responsibleProduction">
+                        <label for="responsibleProduction">Responsible Consumption and Production</label>
+                    </div>
+                    <div class="goalCheckboxes">
+                        <input type="checkbox" id="climateAction" value="climateAction">
+                        <label for="climateAction">Climate Action</label>
+                    </div>
+                    <div class="goalCheckboxes">
+                        <input type="checkbox" id="waterLife" value="waterLife">
+                        <label for="waterLife">Life Below Water</label>
+                    </div>
+                    <div class="goalCheckboxes">
+                        <input type="checkbox" id="landLife" value="landLife">
+                        <label for="landLife">Life on Land</label>
+                    </div>
+                    <div class="goalCheckboxes">
+                        <input type="checkbox" id="peaceJustice" value="peaceJustice">
+                        <label for="peaceJustice">Peace, Justice and Strong Institutions</label>
+                    </div>
+                    <div class="goalCheckboxes">
+                        <input type="checkbox" id="partnershipGoals" value="partnershipGoals">
+                        <label for="partnershipGoals">Partnership for The Goals</label>
+                    </div>
                 </div>
                 <button id="update-button" type="button">Update</button>
             </form>

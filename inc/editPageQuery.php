@@ -26,7 +26,7 @@
     $Email = strval($Email);
     $Latitude = (float)$Latitude;
     $Longitude = (float)$Longitude;
-
+    //Loop through Goals array
     for ($i=0; $i < 17; $i++)
     {
         $Goals[$i] = (int)$Goals[$i];
@@ -34,7 +34,7 @@
 
 
     //SQL Query
-    $query = "UPDATE Events SET Title = ?, Description = ?, StreetAddress = ?, City = ?, Postcode = ?, PhoneNumber = ?, Email = ?, Latitude = ?, Longitude = ?,
+    $query = "UPDATE Activities SET Title = ?, Description = ?, StreetAddress = ?, City = ?, Postcode = ?, PhoneNumber = ?, Email = ?, Latitude = ?, Longitude = ?,
                 noPoverty = ?, zeroHunger = ?, goodHealth = ?, qualityEducation = ?, genderEquality = ?, cleanWater = ?, affordableEnergy = ?, economicGrowth = ?, 
                 industryAndInfrastructure = ?, reducedInequalities = ?, sustainableCommunities = ?, responsibleProduction = ?, climateAction = ?, waterLife = ?, 
                 landLife = ?, peaceJustice = ?, partnershipGoals = ?

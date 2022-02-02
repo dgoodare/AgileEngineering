@@ -32,7 +32,7 @@
 
     
     //SQL insert query ** couldn't get access to database when writing this, so variable names might be wrong **
-    $query = "INSERT INTO Events (Title, Description, `Phone Number`, Email, Goal, Latitude, Longitude,
+    $query = "INSERT INTO Activities (Title, Description, `Phone Number`, Email, Goal, Latitude, Longitude,
                 noPoverty, zeroHunger, goodHealth, qualityEducation, genderEquality, cleanWater, affordableEnergy, economicGrowth, 
                 industryAndInfrastructure, reducedInequalities, sustainableCommunities, responsibleProduction, climateAction, waterLife, 
                 landLife, peaceJustice, partnershipGoals)

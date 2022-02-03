@@ -32,7 +32,7 @@
 
     
     //SQL insert query ** couldn't get access to database when writing this, so variable names might be wrong **
-    $query = "INSERT INTO Activities (Title, Description, `Phone Number`, Email, Goal, Latitude, Longitude,
+    $query = "INSERT INTO Activities (Title, Description, StreetAddress, City, Postcode, PhoneNumber, Email, Latitude, Longitude,
                 noPoverty, zeroHunger, goodHealth, qualityEducation, genderEquality, cleanWater, affordableEnergy, economicGrowth, 
                 industryAndInfrastructure, reducedInequalities, sustainableCommunities, responsibleProduction, climateAction, waterLife, 
                 landLife, peaceJustice, partnershipGoals)
@@ -41,7 +41,7 @@
     //prepate statement and bind parameters
     $stmt = mysqli_prepare($db, $query);
     
-    mysqli_stmt_bind_param($stmt, 'sssssssdddddddddddddddddd', $Title, $Latitude, $Longitude, $Description, $Number, $Email, $Goal, $Goals[0], $Goals[1], $Goals[2], $Goals[3], $Goals[4], $Goals[5], $Goals[6], $Goals[7], $Goals[8], $Goals[9], $Goals[10], $Goals[11], $Goals[12], $Goals[13], $Goals[14], $Goals[15], $Goals[16]);
+    mysqli_stmt_bind_param($stmt, 'sssssssdddddddddddddddddd', $Title,  $Description, $StreetAddress, $City, $Postcode, $Number, $Email, $Latitude, $Longitude, $Goals[0], $Goals[1], $Goals[2], $Goals[3], $Goals[4], $Goals[5], $Goals[6], $Goals[7], $Goals[8], $Goals[9], $Goals[10], $Goals[11], $Goals[12], $Goals[13], $Goals[14], $Goals[15], $Goals[16]);
 
     //execute query
     mysqli_stmt_execute($stmt);

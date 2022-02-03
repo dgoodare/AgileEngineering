@@ -61,5 +61,10 @@
 ?>
 
 <div>
-    $Title
+    <?php
+        echo "Test test test";
+        echo $Title;
+        echo $Description;
+        echo $City;
+    ?>
 </div>

@@ -9,7 +9,6 @@
                 $('#create-button').click(function()
                     {
                         //retrieve values from form based on ID of input
-                        var search = $('#search-input').val();
                         var title = $('#create-title').val();
                         var description = $('#create-description').val();
                         var streetAddress = $('#create-address').val();
@@ -20,7 +19,7 @@
                         var goals = [];
 
                         //get boolean values from checkbox fields
-                        $('#editForm input[type=checkbox]').each(function()
+                        $('#create-form input[type=checkbox]').each(function()
                         {
                             if(this.checked)
                             {
@@ -186,7 +185,7 @@
                 </form>
             </div>
 
-            <div id="server-response">
+            <div id="server-response" name="server-response">
                 <!-- response from server will be shown here -->
             </div>
     </body>

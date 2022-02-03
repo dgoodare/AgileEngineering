@@ -7,6 +7,9 @@ $rules = array(
     //API Routes
     'createPage' => "/api/form",
     'addPageQuery' => "/api/addPage",
+    'activitySearchQuery' => "/api/activitySearch",
+    'editActivitySearch' => "/api/editSearch",
+    'editPageQuery' => "/api/updatePage",
 
 
     //Admin Pages

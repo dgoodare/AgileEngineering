@@ -136,7 +136,7 @@
                             }
                         };
                         //** The address on the next line of code is NOT CORRECT */
-                        xmlhttp.open("GET","https://ac31007.azurewebsites.net/api/editActivitySearch?searchInput="+searchTerm, true);
+                        xmlhttp.open("GET","https://ac31007.azurewebsites.net/api/editSearch?searchInput="+searchTerm, true);
                         xmlhttp.send();
                     }
                 }

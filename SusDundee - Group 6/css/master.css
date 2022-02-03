@@ -131,3 +131,22 @@ footer{
 	position: relative;
 }
 
+/*Styles for Map*/
+.map { /*Use this to style the map*/
+  width: 100vw; 
+  height: 40vh;
+  margin-left: auto;  
+  margin-right: auto;
+}
+#Links {
+  text-align: center;
+  margin: 5px;
+}
+.Link {
+  padding: 3px;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+button {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}

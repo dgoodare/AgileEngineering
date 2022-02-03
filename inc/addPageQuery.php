@@ -3,16 +3,16 @@
     include("dbconnect.php");
 
     //Form Data from AJAX
-    $Title = $_POST['Title'];
-    $Description = $_POST['Description'];
-    $StreetAddress = $_POST['StreetAddress'];
-    $City = $_POST['City'];
-    $Postcode = $_POST['Postcode'];
-    $Number = $_POST['Number'];
-    $Email = $_POST['Email'];
-    $Goals = $_POST['Goals'];
-    $Latitude = $_POST['Latitude'];
-    $Longitude = $_POST['Longitude'];
+    $Title = "Test Title";//$_POST['Title'];
+    $Description = "This is a description for testing purposes";//$_POST['Description'];
+    $StreetAddress = "123 Test Street";//$_POST['StreetAddress'];
+    $City = "Test City";//$_POST['City'];
+    $Postcode = "TEST";//$_POST['Postcode'];
+    $Number = "0123456789";//$_POST['Number'];
+    $Email = "test@testmail.com";//$_POST['Email'];
+    $Goals = [1,1,1,0,1,0,1,1,0,0,0,0,0,0,0,0,0];//$_POST['Goals'];
+    $Latitude = 123;//$_POST['Latitude'];
+    $Longitude = 456;//$_POST['Longitude'];
 
     //convert to correct data types
     $Title = strval($Title);
@@ -31,7 +31,7 @@
     }
 
     
-    //SQL insert query ** couldn't get access to database when writing this, so variable names might be wrong **
+    //SQL query
     $query = "INSERT INTO Activities (Title, Description, StreetAddress, City, Postcode, PhoneNumber, Email, Latitude, Longitude,
                 noPoverty, zeroHunger, goodHealth, qualityEducation, genderEquality, cleanWater, affordableEnergy, economicGrowth, 
                 industryAndInfrastructure, reducedInequalities, sustainableCommunities, responsibleProduction, climateAction, waterLife, 

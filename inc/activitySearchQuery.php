@@ -4,8 +4,13 @@
 
     //GET value of user input
     $search = $_GET['searchInput'];
+    //because we are searching based on either ID (int) or title (text)
+    //we need to have two different variables to store them
+    $searchID = (int)$search;
+    $searchTitle = strval($search);
+
     //SQL query
-    $query = "SELECT * FROM activities WHERE ID LIKE '$search' OR Title LIKE '$search'";
+    $query = "SELECT * FROM activities WHERE ID = '$searchID' OR Title LIKE '$searchTitle'";
 
     //prepare statement
     $stmt = $stmt = mysqli_prepare($db, $query);

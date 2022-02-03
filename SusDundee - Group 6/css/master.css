@@ -134,7 +134,7 @@ footer{
 /*Styles for Map*/
 .map { /*Use this to style the map*/
   width: 100vw; 
-  height: 40vh;
+  height: 50vh;
   margin-left: auto;  
   margin-right: auto;
 }

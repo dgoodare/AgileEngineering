@@ -38,7 +38,7 @@
                 industryAndInfrastructure, reducedInequalities, sustainableCommunities, responsibleProduction, climateAction, waterLife, 
                 landLife, peaceJustice, partnershipGoals)
               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-    echo "<script type='text/javascript'>alert('$Title');</script>";
+    echo $Title;
     //prepate statement and bind parameters
     $stmt = mysqli_prepare($db, $query);
     

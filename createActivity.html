@@ -41,18 +41,18 @@
                         var number = $('#create-number').val();
                         var email = $('#create-email').val();
                         var goals = [];
-                        var latitude = 200;
-						var longitude = 200;
-						url = "https://api.mapbox.com/geocoding/v5/mapbox.places/"
-						for(i of streetAddress.split(" ")){
-							url = url+i+"%20";
-						}
-						for(i of city.split(" ")){
-							url = url+i+"%20";
-						}
-						url = url+postcode+"%20";
-						url = url+"United%20Kingdom%20";
-						key = ".json?&access_token=pk.eyJ1Ijoiam9obmhhcnJvdzE1IiwiYSI6ImNrMnhqY2NleTBjYzgzZ3RhZXVrZ2toYnIifQ.Bd6-bNYAwA9_T_AR9c2bDA&limit=1"
+                        var latitude = 100;
+			var longitude = 100;
+			url = "https://api.mapbox.com/geocoding/v5/mapbox.places/"
+			for(i of streetAddress.split(" ")){
+				url = url+i+"%20";
+			}
+			for(i of city.split(" ")){
+				url = url+i+"%20";
+			}
+			url = url+postcode+"%20";
+			url = url+"United%20Kingdom%20";
+			key = ".json?&access_token=pk.eyJ1Ijoiam9obmhhcnJvdzE1IiwiYSI6ImNrMnhqY2NleTBjYzgzZ3RhZXVrZ2toYnIifQ.Bd6-bNYAwA9_T_AR9c2bDA&limit=1"
                     
                         //get boolean values from checkbox fields
                         $('#create-form input[type=checkbox]').each(function()
@@ -65,12 +65,13 @@
                             {
                                 goals.push(0);
                             }
-                        });
+                        });/*
                         $.getJSON(url+key, function(data, status){
 							longitude = data.features[0].geometry.coordinates[1];
 							latitude = data.features[0].geometry.coordinates[0];
 							ajaxs();
-						});
+						});*/
+			ajaxs();
                         //check that all fields have data
                         function ajaxs(){
                         if (title != "" && latitude != 200 && longitude != 200 && description != "" && number != "" && email != "" && goals.length != 0)

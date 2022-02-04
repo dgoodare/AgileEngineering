@@ -12,7 +12,7 @@
     {
         $emparray[] = $row;
     }
-    echo json_encode($emparray);
+    <div>$emparray</div>;
 
     //close the db connection
     mysqli_close($connection);

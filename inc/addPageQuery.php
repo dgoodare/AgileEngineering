@@ -37,9 +37,9 @@
                 noPoverty, zeroHunger, goodHealth, qualityEducation, genderEquality, cleanWater, affordableEnergy, economicGrowth, 
                 industryAndInfrastructure, reducedInequalities, sustainableCommunities, responsibleProduction, climateAction, waterLife, 
                 landLife, peaceJustice, partnershipGoals)
-              VALUES ('"+$Title+"', '"+$Description+"', '"+$StreetAddress+"', '"+$City+"', '"+$Postcode+"', '"+$Number+"', '"+$Email+"', "+$Latitude+", "+$Longitude;
+              VALUES ('test', 'testing', 'University of Dundee', 'Dundee', '', '1234512345', 'test@gmail.com', "+$Latitude+", "+$Longitude;
     for($goal of $Goals){
-        $query = $query+", "+$goal;
+        $query = $query+", "+"1";
     }
      $query = $query+")";
     

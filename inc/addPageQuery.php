@@ -23,8 +23,8 @@
     $Postcode = strval($Postcode);
     $Number = strval($Number);
     $Email = strval($Email);
-    $Latitude = (int)$Latitude;
-    $Longitude = (int)$Longitude;
+    $Latitude = (flost)$Latitude;
+    $Longitude = (float)$Longitude;
 
     for ($i=0; $i < 17; $i++)
     {

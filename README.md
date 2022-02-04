@@ -10,7 +10,7 @@ We have our front-end stored on the 'website' branch and the back-end stored on 
 The live version of the website can be found at: https://dgoodare.github.io/AgileEngineering/index.html
 
 ## Pair-Programming Video
-https://youtu.be/jfqSnStqbj4
+William and Cameron adding the social media integrations: https://youtu.be/jfqSnStqbj4
 
 ## Sprint Retrospective
 The file can be found in the main branch

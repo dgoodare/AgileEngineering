@@ -65,11 +65,11 @@
                                 goals.push(0);
                             }
                         });
-                        $.getJSON(url+key, function(data, status){
+                        /*$.getJSON(url+key, function(data, status){
 				longitude = data.features[0].geometry.coordinates[1];
 				latitude = data.features[0].geometry.coordinates[0];
 				ajaxs();
-			});
+			});*/
                         //check that all fields have data
                         function ajaxs(){
                         if (title != "" && latitude != 200 && longitude != 200 && description != "" && number != "" && email != "" && goals.length != 0)

@@ -37,7 +37,7 @@
                 noPoverty, zeroHunger, goodHealth, qualityEducation, genderEquality, cleanWater, affordableEnergy, economicGrowth, 
                 industryAndInfrastructure, reducedInequalities, sustainableCommunities, responsibleProduction, climateAction, waterLife, 
                 landLife, peaceJustice, partnershipGoals)
-              VALUES ("+$Title+", "+$Description+", "+$StreetAddress+", "+$City+", "+$Postcode+", "+$Number+", "+$Email+", "+$Latitude+", "+$Longitude;
+              VALUES ('"+$Title+"', '"+$Description+"', '"+$StreetAddress+"', '"+$City+"', '"+$Postcode+"', '"+$Number+"', '"+$Email+"', "+$Latitude+", "+$Longitude;
     for($goal of $Goals){
         $query = $query+", "+$goal;
     }

@@ -2,35 +2,19 @@
     //Connection script
     include("dbconnect.php");
 
-    //receive raw data from POST request
-    $json = file_get_contents('php://input');
-    //convert to php json object
-    $data = json_decode($json);
-
-    $Title = $data->Title;
-    $Description = $data->Description;
-    $StreetAddress = $data->StreetAddress;
-    $City = $data->City;
-    $Postcode = $data->Postcode;
-    $Number = $data->Number;
-    $Email = $data->Email;
-    $Goals = $data->Goals;
-    $Latitude = $data->Latitude;
-    $Longitude = $data->Longitude;
-
-    /*
+    
     //Form Data from AJAX
-    $Title = "Test Title";//$_POST['Title'];
-    $Description = "This is a description for testing purposes";//$_POST['Description'];
-    $StreetAddress = "123 Test Street";//$_POST['StreetAddress'];
-    $City = "Test City";//$_POST['City'];
-    $Postcode = "TEST";//$_POST['Postcode'];
-    $Number = "0123456789";//$_POST['Number'];
-    $Email = "test@testmail.com";//$_POST['Email'];
-    $Goals = [1,1,1,0,1,0,1,1,0,0,0,0,0,0,0,0,0];//$_POST['Goals'];
-    $Latitude = 123;//$_POST['Latitude'];
-    $Longitude = 456;//$_POST['Longitude'];
-    */
+    $Title = $_POST['Title'];
+    $Description = $_POST['Description'];
+    $StreetAddress = $_POST['StreetAddress'];
+    $City = $_POST['City'];
+    $Postcode = $_POST['Postcode'];
+    $Number = $_POST['Number'];
+    $Email = $_POST['Email'];
+    $Goals = $_POST['Goals'];
+    $Latitude = $_POST['Latitude'];
+    $Longitude = $_POST['Longitude'];
+    
     //convert to correct data types
     $Title = strval($Title);
     $Description = strval($Description);

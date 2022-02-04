@@ -15,5 +15,5 @@
     <div>$emparray</div>;
 
     //close the db connection
-    mysqli_close($connection);
+    echo json_encode($emparray);
 ?>

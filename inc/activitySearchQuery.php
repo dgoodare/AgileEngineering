@@ -13,7 +13,7 @@
     $query = "SELECT * FROM activities WHERE ID = '$searchID' OR Title LIKE '$searchTitle'";
 
     //prepare statement
-    $stmt = $stmt = mysqli_prepare($db, $query);
+    $stmt = mysqli_prepare($db, $query);
     //execute statement
     mysqli_stmt_execute($stmt);
     //bind results

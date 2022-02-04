@@ -138,11 +138,11 @@
     var x3;
     var y3;
     var description3;
-	
-    var x = [[],[],[]];
+
+	var x = [[],[],[]];
     //All of these funtions assign values to the co-ordinates and descriptions based on which button was clicked and displayes a map with the markers
     function displayGoal1(){
-       x[0][0] = -2.995378;
+        x[0][0] = -2.995378;
         x[0][1] = 56.471160;
         x[0][2] = "<strong>Implement Dundee's Fairness Strategy and Action Plan.</strong>";
 
@@ -158,17 +158,17 @@
     }
 
     function displayGoal2(){
-        x1 = -3.008605;
-        y1 = 56.468031;
-        description1 = "<strong>Support the delivery of a 'Fun and Food' programme giving families access to free meals and activities during school holidays.</strong>";
+        x[0][0] = -3.008605;
+        x[0][1] = 56.468031;
+        x[0][2] = "<strong>Support the delivery of a 'Fun and Food' programme giving families access to free meals and activities during school holidays.</strong>";
 
-        x2 = -2.992458;
-        y2 = 56.455891;
-        description2 = "<strong>Streamline procedures for applying for Free School Meals to maximise take-up.</strong>";
+        x[1][0] = -2.992458;
+        x[1][1] = 56.455891;
+        x[1][2] = "<strong>Streamline procedures for applying for Free School Meals to maximise take-up.</strong>";
 
-        x3 = -2.972188;
-        y3 = 56.475806;
-        description3 = "<strong>Work with Greenspace Scotland to develop a Local Food Growing Strategy and expand the number of community growing projects and support them with skills training, materials and capacity building.</strong>";
+        x[2][0] = -2.972188;
+        x[2][1] = 56.475806;
+        x[2][2] = "<strong>Work with Greenspace Scotland to develop a Local Food Growing Strategy and expand the number of community growing projects and support them with skills training, materials and capacity building.</strong>";
         displayMap();
     }
 
@@ -408,17 +408,15 @@
         });
         map.addControl(new mapboxgl.NavigationControl());
         //This part is where the markers are added
-       for (var i = 0; i < x.length; i++) {
-		var marker = new mapboxgl.Marker({
-		color: "#e74c3c",
-		draggable: false
-		}).setLngLat([x[i][0], x[i][1]])
-		.setPopup(new mapboxgl.Popup().setHTML(x[i][2]))
-		.addTo(map);
-	}
-
-
-            // Add a layer showing the places.
+        for (var i = 0; i < x.length; i++) {
+			var marker = new mapboxgl.Marker({
+			color: "#e74c3c",
+			draggable: false
+			}).setLngLat([x[i][0], x[i][1]])
+			.setPopup(new mapboxgl.Popup().setHTML(x[i][2]))
+			.addTo(map);
+		}
+		// Add a layer showing the places.
             map.addLayer({
                 'id': 'places',
                 'type': 'symbol',
@@ -457,7 +455,6 @@
             map.on('mouseleave', 'places', () => {
                 map.getCanvas().style.cursor = '';
             });
-        });
     } 
 </script>
 </div>

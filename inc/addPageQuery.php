@@ -16,7 +16,7 @@
     $Longitude = $_POST['Longitude'];
     
     //convert to correct data types
-    $Title = $_GET["title"];//strval($Title);
+    $Title = strval($Title);
     $Description = strval($Description);
     $StreetAddress = strval($StreetAddress);
     $City = strval($City);
@@ -38,7 +38,7 @@
                 industryAndInfrastructure, reducedInequalities, sustainableCommunities, responsibleProduction, climateAction, waterLife, 
                 landLife, peaceJustice, partnershipGoals)
               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-    echo $Title;
+    
     //prepate statement and bind parameters
     $stmt = mysqli_prepare($db, $query);
     

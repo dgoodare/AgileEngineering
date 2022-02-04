@@ -12,8 +12,8 @@
     {
         $emparray[] = $row;
     }
-    <div>$emparray</div>;
+    echo json_encode($emparray);
 
     //close the db connection
-    echo json_encode($emparray);
+    mysqli_close($connection);
 ?>

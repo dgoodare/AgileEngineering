@@ -5,8 +5,8 @@
     
     //Form Data from AJAX
     $data = $_POST['data'];
-    json_decode($data);
-    $Title = data[0].Title;/*
+    $decodedDate = json_decode($data);
+    $Title = $decodedDate['Title'];/*
     $Description = $_POST['Description'];
     $StreetAddress = $_POST['StreetAddress'];
     $City = $_POST['City'];

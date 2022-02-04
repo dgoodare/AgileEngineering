@@ -10,6 +10,7 @@ $rules = array(
     'activitySearchQuery' => "/api/activitySearch",
     'editActivitySearch' => "/api/editSearch",
     'editPageQuery' => "/api/updatePage",
+    'map' => "/api/getall"
 
 
     //Admin Pages

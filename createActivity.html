@@ -39,7 +39,7 @@
                                 {
                                     url: "https://ac31007.azurewebsites.net/api/addPage",
                                     type: "POST",
-                                    data: {
+                                    data: {json: JSON.stringify({
                                         Title: title,
                                         Description: description,
                                         StreetAddress: streetAddress,
@@ -48,7 +48,8 @@
                                         Number: number,
                                         Email: email,
                                         Goals: goals
-                                    },
+                                    })},
+                                    dataType: JSON,
 
                                     cache: false,
 

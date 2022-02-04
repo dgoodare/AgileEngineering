@@ -138,21 +138,22 @@
     var x3;
     var y3;
     var description3;
-
+	
+    var x = [[],[],[]];
     //All of these funtions assign values to the co-ordinates and descriptions based on which button was clicked and displayes a map with the markers
     function displayGoal1(){
-        x1 = -2.995378;
-        y1 = 56.471160;
-        description1 = "<strong>Implement Dundee's Fairness Strategy and Action Plan.</strong>";
+       x[0][0] = -2.995378;
+        x[0][1] = 56.471160;
+        x[0][2] = "<strong>Implement Dundee's Fairness Strategy and Action Plan.</strong>";
 
-        x2 = -2.975109;
-        y2 = 56.466514;
-        description2 = "<strong>Test a new model of advice on welfare benefits and budgeting to decrease the number of people affected by debt.</strong>";
+        x[1][0] = -2.975109;
+        x[1][1] = 56.466514;
+        x[1][2] = "<strong>Test a new model of advice on welfare benefits and budgeting to decrease the number of people affected by debt.</strong>";
 
-        x3 = -2.967894;
-        y3 = 56.475806;
-        description3 = "<strong>Increase the number of Dundee organisations and businesses signed up to the Scottish Living Wage and seek to have Dundee accredited as a 'Living Wage City'.</strong>";
-
+        x[2][0] = -2.967894;
+        x[2][1] = 56.475806;
+        x[2][2] = "<strong>Increase the number of Dundee organisations and businesses signed up to the Scottish Living Wage and seek to have Dundee accredited as a 'Living Wage City'.</strong>";
+		
         displayMap();
     }
 
@@ -407,51 +408,14 @@
         });
         map.addControl(new mapboxgl.NavigationControl());
         //This part is where the markers are added
-        map.on('load', () => {
-            map.addSource('places', {
-                'type': 'geojson',
-                'data': {
-                    'type': 'FeatureCollection',
-                    'features': [
-                        {
-                                'type': 'Feature',
-                                'properties': {
-                                    'description':
-                                    description1,
-                                'icon': 'park-15', //The icon style can be changed to whatever
-                            },
-                            'geometry': {
-                                'type': 'Point',
-                                'coordinates': [x1, y1]
-                            }
-                        },
-                        {
-                                'type': 'Feature',
-                                'properties': {
-                                    'description':
-                                    description2,
-                                'icon': 'car-15'
-                            },
-                            'geometry': {
-                                'type': 'Point',
-                                'coordinates': [x2, y2]
-                            }
-                        },
-                        {
-                                'type': 'Feature',
-                                'properties': {
-                                    'description':
-                                    description3,
-                                'icon': 'park-15'
-                            },
-                            'geometry': {
-                                'type': 'Point',
-                                'coordinates': [x3, y3]
-                            }
-                        }
-                    ]
-                }
-            });
+       for (var i = 0; i < x.length; i++) {
+		var marker = new mapboxgl.Marker({
+		color: "#e74c3c",
+		draggable: false
+		}).setLngLat([x[i][0], x[i][1]])
+		.setPopup(new mapboxgl.Popup().setHTML(x[i][2]))
+		.addTo(map);
+	}
 
 
             // Add a layer showing the places.

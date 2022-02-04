@@ -16,7 +16,7 @@
     $Longitude = $_POST['Longitude'];
     
     //convert to correct data types
-    $Title = strval($Title);
+    $Title = $_GET["title"];//strval($Title);
     $Description = strval($Description);
     $StreetAddress = strval($StreetAddress);
     $City = strval($City);
